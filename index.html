@@ -10,10 +10,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap"
         rel="stylesheet" />
-
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -96,52 +96,15 @@
                     <div class="section-label">🔴 Overdue</div>
                     <!-- selected on click  -->
                     <!-- Card 1 – Overdue -->
-                    <div class="cards-wrapper">
+                    <div id="overdueCards" class="cards-wrapper">
 
-                        <div class="pcard selected">
-                            <div class="pcard-bar" style="background:var(--danger)"></div>
-                            <div class="pcard-body">
-                                <div class="pcard-top">
-                                    <div class="pcard-name">Halcyon E-Commerce Redesign</div>
-                                    <div class="badge badge-danger">
-                                        <div class="badge-dot"></div>Overdue
-                                    </div>
-                                </div>
-                                <div class="pcard-client">Client: Halcyon Retail Group</div>
-                                <div class="pcard-meta">
-                                    <div class="meta-item"><ion-icon name="play-circle-outline"></ion-icon><span>Started
-                                            <strong>Mar 10</strong></span></div>
-                                    <div class="meta-item"><ion-icon name="flag-outline"></ion-icon><span>Due <strong
-                                                style="color:var(--danger)">Jun 01</strong></span></div>
-                                    <div class="meta-item"><ion-icon
-                                            name="people-outline"></ion-icon><span><strong>6</strong>
-                                            members</span></div>
-                                </div>
-                                <div class="pcard-progress">
-                                    <div class="prog-row">
-                                        <span class="prog-label">Overall progress</span>
-                                        <span class="prog-pct" style="color:var(--danger)">62%</span>
-                                    </div>
-                                    <div class="prog-track">
-                                        <div class="prog-fill danger" style="width:62%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pcard-right">
-                                <div class="time-remaining tr-danger">12d late</div>
-                                <div class="av-stack">
-                                    <div class="av" style="background:#ef4444">+2</div>
-                                    <div class="av" style="background:#8b63d2">SR</div>
-                                    <div class="av" style="background:#4f63d2">AK</div>
-                                </div>
-                                <div class="priority-tag">🔥 High</div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 
                 <div class="cards-main-wrap">
-                    <div class="section-label" style="margin-top:4px;">⚠️ At Risk</div>
+                    <div class="section-label" style="margin-top:4px;">⚠️ At Risk (======================== Ignore these
+                        =========================)</div>
 
                     <div class="cards-wrapper">
 
@@ -323,11 +286,11 @@
         </main>
 
         <!-- ── Right Panel – Project Detail ── -->
-        <aside class="rp">
+        <aside id="projectInfo" class="rp">
             <div class="rp-header">
                 <div class="rp-title-row">
                     <div class="rp-title">Project Detail</div>
-                    <div class="rp-close"><ion-icon name="close-outline"></ion-icon></div>
+                    <div id="closeDetails" class="rp-close"><ion-icon name="close-outline"></ion-icon></div>
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;margin-top:12px;">
                     <div class="badge badge-danger">
@@ -335,12 +298,12 @@
                     </div>
                     <div
                         style="font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--light);">
-                        🔥 High Priority</div>
+                        <span id="priority">🔥 High</span> Priority
+                    </div>
                 </div>
-                <div class="rp-project-name">Halcyon E-Commerce Redesign</div>
-                <div class="rp-client">Client: Halcyon Retail Group</div>
+                <div id="selectedProjectName" class="rp-project-name">Halcyon E-Commerce Redesign</div>
+                <div id="selectedProjectClientName" class="rp-client">Client: Halcyon Retail Group</div>
             </div>
-
             <div class="rp-body">
 
                 <!-- Progress block -->
@@ -348,17 +311,15 @@
                     <div class="rp-section-title">Progress</div>
                     <div class="progress-circle-wrap">
                         <div class="pcircle">
-                            <svg width="72" height="72" viewBox="0 0 72 72">
-                                <circle cx="36" cy="36" r="29" fill="none" stroke="#f1f3fb" stroke-width="7" />
-                                <circle cx="36" cy="36" r="29" fill="none" stroke="var(--danger)" stroke-width="7"
-                                    stroke-dasharray="182" stroke-dashoffset="69" stroke-linecap="round" />
-                            </svg>
-                            <div class="pcircle-pct" style="color:var(--danger)">62%</div>
+
+                            <div class="radial-progress pcircle" style="--value:70; color:var(--danger)"
+                                aria-valuenow="70" role="progressbar">70%
+                            </div>
                         </div>
                         <div class="pcircle-stats">
                             <div class="pcs-row">
-                                <div class="pcs-val">18</div>
-                                <div class="pcs-lbl">of 29 tasks done</div>
+                                <div id="milestonesDone" class="pcs-val">18</div>
+                                <div class="pcs-lbl">of <span id="milestones">29</span> tasks done</div>
                             </div>
                         </div>
                     </div>
@@ -370,29 +331,34 @@
                     <div class="info-grid">
                         <div class="ig-cell">
                             <div class="ig-label">Started</div>
-                            <div class="ig-value"><ion-icon name="play-circle-outline"></ion-icon>Mar 10, 2025</div>
+                            <div class="ig-value"><ion-icon name="play-circle-outline"></ion-icon><span
+                                    id="projectStarted">Mar 10, 2025</span></div>
                         </div>
                         <div class="ig-cell">
                             <div class="ig-label">Deadline</div>
                             <div class="ig-value" style="color:var(--danger)"><ion-icon name="flag"
-                                    style="color:var(--danger)"></ion-icon>Jun 01, 2025</div>
+                                    style="color:var(--danger)"></ion-icon><span id="projectDeadline">Jun 01,
+                                    2025</span></div>
                         </div>
                         <div class="ig-cell">
                             <div class="ig-label">Time Elapsed</div>
-                            <div class="ig-value"><ion-icon name="time-outline"></ion-icon>83 days</div>
+                            <div class="ig-value"><ion-icon name="time-outline"></ion-icon><span id="timeElapsed">83
+                                    days</span></div>
                         </div>
                         <div class="ig-cell">
                             <div class="ig-label">Overdue By</div>
                             <div class="ig-value" style="color:var(--danger)"><ion-icon name="alert-circle"
-                                    style="color:var(--danger)"></ion-icon>12 days</div>
+                                    style="color:var(--danger)"></ion-icon><span id="overdueBy">12 days</span></div>
                         </div>
                         <div class="ig-cell">
                             <div class="ig-label">Budget Used</div>
-                            <div class="ig-value"><ion-icon name="cash-outline"></ion-icon>$14,200</div>
+                            <div class="ig-value"><ion-icon name="cash-outline"></ion-icon><span
+                                    id="budgetUsed">$14,200</span></div>
                         </div>
                         <div class="ig-cell">
                             <div class="ig-label">Budget Total</div>
-                            <div class="ig-value"><ion-icon name="wallet-outline"></ion-icon>$18,000</div>
+                            <div class="ig-value"><ion-icon name="wallet-outline"></ion-icon><span
+                                    id="totalBudget">$18,000</span></div>
                         </div>
                     </div>
                 </div>
@@ -400,7 +366,7 @@
                 <!-- Team -->
                 <div>
                     <div class="rp-section-title">Assigned Team</div>
-                    <div class="team-list">
+                    <div id="teamList" class="team-list">
                         <div class="team-row">
                             <div class="team-av" style="background:#4f63d2">AK</div>
                             <div>
@@ -447,7 +413,7 @@
                 <!-- Milestones -->
                 <div>
                     <div class="rp-section-title">Milestones</div>
-                    <div class="milestone-list">
+                    <div id="milestoneList" class="milestone-list">
                         <div class="ms-row">
                             <div class="ms-check ms-done"><ion-icon name="checkmark"></ion-icon></div>
                             <div class="ms-text ms-done-text">Discovery & Research</div>
@@ -485,7 +451,7 @@
                 <!-- Recent Activity -->
                 <div>
                     <div class="rp-section-title">Recent Activity</div>
-                    <div class="activity-list">
+                    <div id="activityList" class="activity-list">
                         <div class="act-row">
                             <div class="act-av" style="background:#8b5cf6">SR</div>
                             <div class="act-text"><strong>Sara</strong> uploaded revised homepage mockups</div>
@@ -514,9 +480,9 @@
 
     </div>
 
-    <script type="module" src="./scripts/variables.js"></script>
-    <script type="module" src="./scripts/functions.js"></script>
-    <script type="module" src="./scripts/index.js"></script>
+    <script src="./scripts/variables.js"></script>
+    <script src="./scripts/functions.js"></script>
+    <script src="./scripts/index.js"></script>
 
 </body>
 

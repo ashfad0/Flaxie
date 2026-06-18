@@ -344,6 +344,7 @@
       cursor: pointer;
       transition: border-color .15s, box-shadow .15s;
       position: relative;
+      transition: all .3s ease;
   }
 
   .pcard:hover {
@@ -669,13 +670,11 @@
       display: flex;
       align-items: center;
       gap: 16px;
+      height: fit-content
   }
 
   .pcircle {
-      position: relative;
-      width: 72px;
-      height: 72px;
-      flex-shrink: 0;
+      scale: .95;
   }
 
   .pcircle svg {

@@ -1,1 +1,27 @@
-const url = 'https://gist.githubusercontent.com/ashfad0/e3178d7cee22d878bbf08ede2377223e/raw/project-company_data.json'
+let data;
+let employees;
+let projects;
+
+const overdueCards = document.getElementById('overdueCards')
+const projectInfo = document.getElementById('projectInfo')
+const closeDetails = document.getElementById('closeDetails')
+// const projectCards = document.querySelectorAll('.pcard')
+
+
+// project sidebar 
+const selectedProjectName = document.getElementById('selectedProjectName')
+const selectedProjectClientName = document.getElementById('selectedProjectClientName')
+const projectPriority = document.getElementById('priority')
+const milestones = document.getElementById('milestones')
+const milestonesDone = document.getElementById('milestonesDone')
+const projectStarted = document.getElementById('projectStarted')
+const projectDeadline = document.getElementById('projectDeadline')
+const timeElapsed = document.getElementById('timeElapsed')
+const overdueBy = document.getElementById('overdueBy')
+const budgetUsed = document.getElementById('budgetUsed')
+const totalBudget = document.getElementById('totalBudget')
+const projectTeamList = document.getElementById('teamList')
+const sidebarMilestoneList = document.getElementById('milestoneList')
+const activityList = document.getElementById('activityList')
+
+
