@@ -63,6 +63,13 @@ const renderProjectDetails = project => {
     milestonesDone.innerText = project.milestones.length - 2
     projectStarted.innerText = project.startDate
     projectDeadline.innerText = project.deadline
+    timeElapsed.innerText = calculateDays(project.startDate, project.deadline) + 'days'
+    projectDeadline.style.color = 'unset'
+    deadlineIcon.style.color = 'blue'
+    if (new Date(project.deadline).getTime() < new Date().getTime()) {
+        projectDeadline.style.color = 'var(--danger)'
+        deadlineIcon.style.color = 'var(--danger)'
+    }
     budgetUsed.innerText = project.expence
     totalBudget.innerText = project.budget
 }
@@ -75,7 +82,7 @@ const renderAssigned = (projectId, wrapper) => {
 
     assignedArray.forEach(employee => {
         renderElement = `<div class="team-row">
-                            <div class="team-av" style="background:#4f63d2">AK</div>
+                            <img class="team-av" src="${employee.profileImage}" alt="">
                             <div>
                                 <div class="team-name">${employee.name}</div>
                                 <div class="team-role">${employee.name}</div>
@@ -106,3 +113,22 @@ const renderMilestones = project => {
     })
 
 }
+
+const calculateDays = (start, end) => {
+    let startDate = new Date(start);
+    let endDate = new Date(end);
+    let result;
+
+    result = endDate.getTime() - startDate.getTime()
+
+    // if (condition === 'add') {
+    //     result = endDate.getTime() + startDate.getTime()
+    // }
+
+    const calculate = result / (1000 * 60 * 60 * 24)
+    const calculayeDays = Math.floor(calculate)
+    return calculayeDays
+}
+
+
+console.log(calculateDays('2026-07-10', new Date()))

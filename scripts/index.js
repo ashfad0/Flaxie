@@ -63,3 +63,18 @@ closeDetails.addEventListener('click', () => {
     const inactive = cards.forEach(card => card.classList.remove('selected'))
     projectInfo.classList.remove('active')
 })
+
+
+
+// console.log(new Date())
+
+// const startDate = new Date('2026-09-10')
+// const endDate = new Date()
+
+
+// const diffrenceInMs = endDate - startDate
+
+// const convertToDay = diffrenceInMs / (1000 * 60 * 60 * 24)
+
+// const diffDays = Math.floor(convertToDay)
+// console.log(diffDays)
