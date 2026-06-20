@@ -58,20 +58,20 @@
             </div>
 
             <!-- Filters -->
-            <div class="filter-bar">
+            <div id="filterBar" class="filter-bar">
                 <div class="ftab on">All Projects</div>
                 <div class="ftab">Active</div>
                 <div class="ftab">In Review</div>
                 <div class="ftab">On Hold</div>
                 <div class="ftab">Completed</div>
-                <div class="filter-right">
+                <!-- <div class="filter-right">
                     <div class="sort-btn"><ion-icon name="swap-vertical-outline"></ion-icon> Deadline</div>
                     <div class="sort-btn"><ion-icon name="grid-outline"></ion-icon></div>
-                </div>
+                </div> -->
             </div>
 
             <!-- Summary pills -->
-            <div class="summary-row">
+            <div id="summaryRow" class="summary-row">
                 <div class="sum-pill">
                     <div class="sum-dot" style="background:var(--accent)"></div><strong>12</strong> Total
                 </div>
@@ -103,51 +103,10 @@
                 </div>
 
                 <div class="cards-main-wrap">
-                    <div class="section-label" style="margin-top:4px;">⚠️ At Risk (======================== Ignore these
-                        =========================)</div>
+                    <div class="section-label" style="margin-top:4px;">⚠️ At Risk</div>
 
-                    <div class="cards-wrapper">
+                    <div id="atRiskCards" class="cards-wrapper">
 
-                        <div class="pcard">
-                            <div class="pcard-bar" style="background:var(--warn)"></div>
-                            <div class="pcard-body">
-                                <div class="pcard-top">
-                                    <div class="pcard-name">Orion SaaS Onboarding Flow</div>
-                                    <div class="badge badge-warn">
-                                        <div class="badge-dot"></div>At Risk
-                                    </div>
-                                </div>
-                                <div class="pcard-client">Client: Orion Analytics</div>
-                                <div class="pcard-meta">
-                                    <div class="meta-item"><ion-icon name="play-circle-outline"></ion-icon><span>Started
-                                            <strong>May 01</strong></span></div>
-                                    <div class="meta-item"><ion-icon name="flag-outline"></ion-icon><span>Due
-                                            <strong>Jun
-                                                28</strong></span></div>
-                                    <div class="meta-item"><ion-icon
-                                            name="people-outline"></ion-icon><span><strong>4</strong>
-                                            members</span></div>
-                                </div>
-                                <div class="pcard-progress">
-                                    <div class="prog-row">
-                                        <span class="prog-label">Overall progress</span>
-                                        <span class="prog-pct" style="color:var(--warn)">38%</span>
-                                    </div>
-                                    <div class="prog-track">
-                                        <div class="prog-fill warn" style="width:38%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pcard-right">
-                                <div class="time-remaining tr-warn">11d left</div>
-                                <div class="av-stack">
-                                    <div class="av" style="background:#22c55e">JM</div>
-                                    <div class="av" style="background:#4f63d2">AK</div>
-                                    <div class="av" style="background:#8b5cf6">TN</div>
-                                </div>
-                                <div class="priority-tag">Medium</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -156,129 +115,8 @@
                 <div class="cards-main-wrap">
                     <div class="section-label" style="margin-top:4px;">✅ On Track</div>
 
-                    <div class="cards-wrapper">
+                    <div id="onTrackCards" class="cards-wrapper">
 
-                        <!-- Card 6 – On Track -->
-                        <div class="pcard">
-                            <div class="pcard-bar" style="background:var(--ok)"></div>
-                            <div class="pcard-body">
-                                <div class="pcard-top">
-                                    <div class="pcard-name">Apex Corporate Website</div>
-                                    <div class="badge badge-ok">
-                                        <div class="badge-dot"></div>On Track
-                                    </div>
-                                </div>
-                                <div class="pcard-client">Client: Apex Capital Partners</div>
-                                <div class="pcard-meta">
-                                    <div class="meta-item"><ion-icon name="play-circle-outline"></ion-icon><span>Started
-                                            <strong>May 20</strong></span></div>
-                                    <div class="meta-item"><ion-icon name="flag-outline"></ion-icon><span>Due
-                                            <strong>Jul
-                                                20</strong></span></div>
-                                    <div class="meta-item"><ion-icon
-                                            name="people-outline"></ion-icon><span><strong>4</strong>
-                                            members</span></div>
-                                </div>
-                                <div class="pcard-progress">
-                                    <div class="prog-row">
-                                        <span class="prog-label">Overall progress</span>
-                                        <span class="prog-pct" style="color:var(--ok)">72%</span>
-                                    </div>
-                                    <div class="prog-track">
-                                        <div class="prog-fill ok" style="width:72%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pcard-right">
-                                <div class="time-remaining tr-ok">34d left</div>
-                                <div class="av-stack">
-                                    <div class="av" style="background:#4ab4c5">+1</div>
-                                    <div class="av" style="background:#8b5cf6">DP</div>
-                                    <div class="av" style="background:#4f63d2">AK</div>
-                                </div>
-                                <div class="priority-tag">Low</div>
-                            </div>
-                        </div>
-
-                        <!-- Card 7 – In Review -->
-                        <div class="pcard">
-                            <div class="pcard-bar" style="background:var(--review)"></div>
-                            <div class="pcard-body">
-                                <div class="pcard-top">
-                                    <div class="pcard-name">Slate Packaging Design</div>
-                                    <div class="badge badge-review">
-                                        <div class="badge-dot"></div>In Review
-                                    </div>
-                                </div>
-                                <div class="pcard-client">Client: Slate Consumer Goods</div>
-                                <div class="pcard-meta">
-                                    <div class="meta-item"><ion-icon name="play-circle-outline"></ion-icon><span>Started
-                                            <strong>Mar 28</strong></span></div>
-                                    <div class="meta-item"><ion-icon name="flag-outline"></ion-icon><span>Due
-                                            <strong>Jun
-                                                25</strong></span></div>
-                                    <div class="meta-item"><ion-icon
-                                            name="people-outline"></ion-icon><span><strong>2</strong>
-                                            members</span></div>
-                                </div>
-                                <div class="pcard-progress">
-                                    <div class="prog-row">
-                                        <span class="prog-label">Overall progress</span>
-                                        <span class="prog-pct" style="color:var(--review)">92%</span>
-                                    </div>
-                                    <div class="prog-track">
-                                        <div class="prog-fill review" style="width:92%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pcard-right">
-                                <div class="time-remaining tr-ok">8d left</div>
-                                <div class="av-stack">
-                                    <div class="av" style="background:#d24f8b">CM</div>
-                                    <div class="av" style="background:#22c55e">FN</div>
-                                </div>
-                                <div class="priority-tag">Low</div>
-                            </div>
-                        </div>
-
-                        <!-- Card 8 – On Hold -->
-                        <div class="pcard">
-                            <div class="pcard-bar" style="background:var(--hold)"></div>
-                            <div class="pcard-body">
-                                <div class="pcard-top">
-                                    <div class="pcard-name">Nova Fintech Dashboard</div>
-                                    <div class="badge badge-hold">
-                                        <div class="badge-dot"></div>On Hold
-                                    </div>
-                                </div>
-                                <div class="pcard-client">Client: Nova Payments Ltd.</div>
-                                <div class="pcard-meta">
-                                    <div class="meta-item"><ion-icon name="play-circle-outline"></ion-icon><span>Started
-                                            <strong>Feb 15</strong></span></div>
-                                    <div class="meta-item"><ion-icon name="flag-outline"></ion-icon><span>Due
-                                            <strong>Aug
-                                                10</strong></span></div>
-                                    <div class="meta-item"><ion-icon name="pause-circle-outline"></ion-icon><span>Paused
-                                            <strong>May 30</strong></span></div>
-                                </div>
-                                <div class="pcard-progress">
-                                    <div class="prog-row">
-                                        <span class="prog-label">Overall progress</span>
-                                        <span class="prog-pct" style="color:var(--hold)">34%</span>
-                                    </div>
-                                    <div class="prog-track">
-                                        <div class="prog-fill hold" style="width:34%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pcard-right">
-                                <div class="time-remaining tr-hold">Paused</div>
-                                <div class="av-stack">
-                                    <div class="av" style="background:#4f63d2">TK</div>
-                                </div>
-                                <div class="priority-tag">Low</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -313,8 +151,8 @@
                     <div class="progress-circle-wrap">
                         <div class="pcircle">
 
-                            <div class="radial-progress pcircle" style="--value:70; color:var(--danger)"
-                                aria-valuenow="70" role="progressbar">70%
+                            <div id="radialProgress" class="radial-progress pcircle"
+                                style="--value:70; color:var(--danger)" aria-valuenow="70" role="progressbar">70%
                             </div>
                         </div>
                         <div class="pcircle-stats">
@@ -347,9 +185,9 @@
                                     days</span></div>
                         </div>
                         <div class="ig-cell">
-                            <div class="ig-label">Overdue By</div>
-                            <div class="ig-value" style="color:var(--danger)"><ion-icon name="alert-circle"
-                                    style="color:var(--danger)"></ion-icon><span id="overdueBy">12 days</span></div>
+                            <div id="sidebarSubStatus" class="ig-label">Overdue By</div>
+                            <div class="ig-value"><ion-icon id="remainingDayIcon" name="alert-circle"></ion-icon><span
+                                    id="remainingDay">12 days</span></div>
                         </div>
                         <div class="ig-cell">
                             <div class="ig-label">Budget Used</div>

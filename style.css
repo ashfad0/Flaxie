@@ -673,6 +673,10 @@
       height: fit-content
   }
 
+  .radial-progress {
+      transition: all .3s ease;
+  }
+
   .pcircle {
       scale: .95;
   }
